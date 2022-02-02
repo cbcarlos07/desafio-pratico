@@ -13,6 +13,57 @@ mv composer.phar /usr/local/bin/composer
 https://stackoverflow.com/a/68149438/6754506
 
 
+## No Docker
+
+- Acessar o container php7.3 e modificar o seguinte arquivo
+
+/etc/apache2/sites-available/000-default.conf
+
+Com seguinte conteúdo
+
+    Alias /backend /var/www/html/backend/public
+
+	<Directory /var/www/html/backend/public >
+
+		Options Indexes FollowSymLinks
+
+		AllowOverride All
+
+		Require all granted
+
+	</Directory>
+
+E reiniciar o container ou o apache
+
+    service apache2 restart
+
+    docker restart php7.3
+
+- Na raiz deste projeto acessar a pasta backend/backend
+
+Criar um arquivo chamado .env
+
+Copiar o conteúdo do arquivo .env.example para o .env
+
+- 
+
+- Dentro do container php7.3 acessar pasta /var/www/html/backend e executar o seguntes comandos
+
+    composer install
+
+E aguardar
+
+Após o término do comando acima, dar os seguintes comandos:
+
+    php artisan key:generate
+    php artisan config:cache 
+    php artisan config:clear
+
+Após esses comandos executar o seguinte comando
+
+    php artisan mysql:createdb
+
+    php artisan migrate --path=/database/migrations/2022_02_02_153045_create_product_table.php
 
 
 # Após instalar o laravel
