@@ -15,6 +15,16 @@ https://stackoverflow.com/a/68149438/6754506
 
 ## No Docker
 
+- Na raiz deste projeto acessar a pasta backend/backend
+
+Criar um arquivo chamado .env
+
+Copiar o conteúdo do arquivo .env.example para o .env
+
+- Rodar o comando dentro da raiz do projeto
+
+    docker-compose up -d 
+
 - Acessar o container php7.3 e modificar o seguinte arquivo
 
 /etc/apache2/sites-available/000-default.conf
@@ -39,13 +49,7 @@ E reiniciar o container ou o apache
 
     docker restart php7.3
 
-- Na raiz deste projeto acessar a pasta backend/backend
 
-Criar um arquivo chamado .env
-
-Copiar o conteúdo do arquivo .env.example para o .env
-
-- 
 
 - Dentro do container php7.3 acessar pasta /var/www/html/backend e executar o seguntes comandos
 
