@@ -140,3 +140,7 @@ Fonte:  https://stackoverflow.com/a/59915486/6754506
     php artisan mysql:createdb
 
     php artisan migrate --path=/database/migrations/2022_02_02_153045_create_product_table.php
+
+## Link do projeto
+
+    https://youtu.be/17UnvFIFRoA
